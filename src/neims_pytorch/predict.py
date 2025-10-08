@@ -98,10 +98,10 @@ def main(
     with open(output_filename, "w") as fout:
         j = 0
         for i, compound in enumerate(tqdm(compounds)):
-            fout.write(f"name: {compound["id"].rstrip('\n')}\n")
-            fout.write(f"inchi: {compound["inchi"]}\n")
-            fout.write(f"inchikey: {compound["inchikey"]}\n")
-            fout.write(f"smiles: {compound["smiles"]}\n")
+            fout.write(f"name: {compound['id'].rstrip('\n')}\n")
+            fout.write(f"inchi: {compound['inchi']}\n")
+            fout.write(f"inchikey: {compound['inchikey']}\n")
+            fout.write(f"smiles: {compound['smiles']}\n")
 
             if compound["mol"] is None:
                 fout.write("num peaks: 0\n")
