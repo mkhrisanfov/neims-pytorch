@@ -1,0 +1,39 @@
+[project]
+name = "neims-pytorch"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Mike Khrisanfov", email = "khrisanfovmike@gmail.com" }
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+dependencies = [
+    "matplotlib>=3.10.6",
+    "numpy>=2.3.3",
+    "optuna>=4.5.0",
+    "pandas>=2.3.3",
+    "rdkit>=2025.3.6",
+    "scikit-learn>=1.7.2",
+    "tensorboard>=2.20.0",
+    "torch>=2.8.0",
+    "tqdm>=4.67.1",
+    "typer>=0.19.2",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.1",
+    "ipywidgets>=8.1.7",
+    "nbformat>=5.10.4",
+    "notebook>=7.4.7",
+]
+
+[[tool.uv.index]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[project.scripts]
+neims-pytorch = "neims_pytorch:main"
+
+
