@@ -13,6 +13,8 @@ from neims_pytorch.datasets import get_train_test_datasets
 from neims_pytorch.models import NEIMSPytorch
 import typer
 
+app = typer.Typer()
+
 
 def weigthed_cosine_similarity_loss(x, y):
     masses = torch.arange(1, x.size()[1] + 1, device=x.device)
@@ -21,6 +23,7 @@ def weigthed_cosine_similarity_loss(x, y):
     )
 
 
+@app.command()
 def train(model, optim, crit, epoch_end, train_dl, test_dl, name, trial):
     torch.cuda.empty_cache()
     pbar = tqdm(range(0, epoch_end), position=0)
@@ -139,4 +142,4 @@ def main(
 
 
 if __name__ == "__main__":
-    typer.run(main)
+    app()

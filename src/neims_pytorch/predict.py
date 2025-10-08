@@ -13,6 +13,8 @@ from neims_pytorch.datasets import (
 )
 from neims_pytorch.models import NEIMSPytorch
 
+app = typer.Typer()
+
 
 def spec_to_string(array, threshold: float = 10):
     out = ""
@@ -22,6 +24,7 @@ def spec_to_string(array, threshold: float = 10):
     return out
 
 
+@app.command()
 def main(
     input_filename: Annotated[
         Path,
@@ -116,4 +119,4 @@ def main(
 
 
 if __name__ == "__main__":
-    typer.run(main)
+    app()

@@ -12,6 +12,8 @@ from neims_pytorch.datasets import get_train_test_datasets
 from neims_pytorch.models import NEIMSPytorch
 import typer
 
+app = typer.Typer()
+
 
 def weigthed_cosine_similarity_loss(x, y):
     masses = torch.arange(1, x.size()[1] + 1, device=x.device)
@@ -47,6 +49,7 @@ def train(model, optim, crit, epoch_end, train_dl, test_dl, name):
     return b_trn, b_tst
 
 
+@app.command()
 def main(
     input_filename: Annotated[
         Path,
@@ -109,4 +112,4 @@ def main(
 
 
 if __name__ == "__main__":
-    typer.run(main)
+    app()
