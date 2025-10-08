@@ -6,7 +6,7 @@ A PyTorch implementation of the [NEIMS](https://github.com/brain-research/deep-m
 
 The original NEIMS architecture was suggested in the following study:
 
-*Wei, J. N., Belanger, D., Adams, R. P., & Sculley, D. (2019). Rapid Prediction of Electron–Ionization Mass Spectrometry Using Neural Networks. ACS Central Science, 5(4), 700–708. https://doi.org/10.1021/acscentsci.9b00085*
+_Wei, J. N., Belanger, D., Adams, R. P., & Sculley, D. (2019). Rapid Prediction of Electron–Ionization Mass Spectrometry Using Neural Networks. ACS Central Science, 5(4), 700–708. https://doi.org/10.1021/acscentsci.9b00085_
 
 The original source code is avaliable on [GitHub](https://github.com/brain-research/deep-molecular-massspec). However, it uses outdated Python 3.6 and Tensorflow 1.13. Therefore, its installation is not always straightforward, it also does not support GPU acceleration, which can be much faster for processig larger datasets.
 
@@ -19,6 +19,12 @@ Clone the repository:
 
 ```
 git clone https://github.com/mkhrisanfov/neims-pytorch
+```
+
+Change folder to `neims-pytorch`:
+
+```
+cd neims-pytorch
 ```
 
 Install [dependencies](./pyproject.toml) and project using uv:
