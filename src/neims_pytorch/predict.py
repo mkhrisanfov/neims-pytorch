@@ -44,7 +44,7 @@ def main(
             resolve_path=True,
         ),
     ],
-    model_weigths: Annotated[
+    model_weights: Annotated[
         Path,
         typer.Argument(
             exists=True,
@@ -88,7 +88,7 @@ def main(
     ).to(device)
     model.load_state_dict(
         torch.load(
-            model_weigths,
+            model_weights,
             map_location=device,
             weights_only=True,
         )
