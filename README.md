@@ -14,7 +14,7 @@ This repository contains an unofficial implementation of NEIMS with several twea
 
 ### Installation
 
-Install [uv](github.com/astral-sh/uv).
+The project requires **Python 3.12+**
 Clone the repository:
 
 ```
@@ -27,21 +27,37 @@ Change folder to `neims-pytorch`:
 cd neims-pytorch
 ```
 
-Install [dependencies](./pyproject.toml) and project using uv:
+Create a virtual environment (or install globally, for advanced users):
 
 ```
-uv sync
+python -m venv .venv
 ```
 
-Alternatively, dependencies can be installed using [requirements.txt](./requirements.txt) file (will install CPU-only version of pytorch):
+Activate virtual environment for Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+or activate virtual environment for Windows (cmd):
+
+```cmd
+venv\Scripts\activate
+```
+
+or activate virtual environment for Windows (PowerShell):
+
+```powershell
+venv\Scripts\Activate.ps1
+```
+
+Install dependencies and `neims_pytorch` package from [pyproject.toml](./pyproject.toml):
 
 ```
-pip install -r requirements.txt
+pip install -e .
 ```
 
-CUDA-compatible pytorch versions can be installed using official [PyTorch](https://pytorch.org/) instructions.
-
-### Inference
+Alternatively, dependencies are provided in [requirements.txt](./requirements.txt) file. CUDA-compatible PyTorch versions can also be installed using official [PyTorch](https://pytorch.org/) instructions.
 
 Install the project with its dependencies.
 Load the weights from the huggingface ([mkhrisanfov/neims-pytorch](https://huggingface.co/mkhrisanfov/neims-pytorch)) and place them into the `models/` folder:
@@ -49,6 +65,10 @@ Load the weights from the huggingface ([mkhrisanfov/neims-pytorch](https://huggi
 ```
 wget -P ./models https://huggingface.co/mkhrisanfov/neims-pytorch/resolve/main/NEIMSPyTorch.pth
 ```
+
+### Inference
+
+**Activate virtual environment (see above).**
 
 Run the inference script with input file containing a list of smiles strings:
 
